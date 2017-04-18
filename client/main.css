@@ -65,6 +65,7 @@ h1 {
 	width: 100%;
 
 	display: flex;
+	justify-content: space-between;
 }
 
 
@@ -123,4 +124,43 @@ h1 {
 	margin: 0 !important;
 	font-size: 2em !important;
 	padding: 5px !important;
+}
+
+
+.adminDashboard {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	overflow: auto;
+}
+
+
+.controlPanel {
+	height: 100%;
+	width: 50%;
+}
+
+
+.userList {
+	background-color: #EEE;
+	padding: 10px;
+}
+
+
+.userList li:hover {
+	cursor: pointer;
+}
+
+
+.addUserDiv {
+	/*overflow: auto;*/
+	padding: 10px;
+}
+
+
+.chip:hover {
+	background-color: #000;
+	color: #FFF;
 }

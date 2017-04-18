@@ -1,0 +1,38 @@
+<template name="adminPanel">
+	<div class="adminDashboard">
+
+		<div class="userList">
+			{{ > allUsers }}
+		</div>
+
+		<div class="addUserDiv">
+			{{ > addUser}}
+		</div>
+	</div>
+</template>
+
+<template name="addUser">
+	<h4>Add a new User</h4>
+	<form class="createUser">
+		<div class="input-field">
+			<input type="radio" name="permission" value="user" id="user" checked>
+			<label for="user">User</label>
+		</div>
+		<div class="input-field">
+			<input type="radio" name="permission" value="manager" id="manager">
+			<label for="manager">Manager</label>
+		</div>
+		<div class="input-field">
+			<input type="radio" name="permission" value="admin" id="admin">
+			<label for="admin">Admin</label>
+		</div>
+		<div class="input-field">
+			<input type="text" name="username" placeholder="username">
+		</div>
+		<div class="input-field">
+			<input type="password" name="password" placeholder="password">
+		</div>
+		<button class="btn waves-effect waves-light" type="submit" name="action">Submit <i class="material-icons right">send</i>
+		  	</button>
+	</form>
+</template>

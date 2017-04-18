@@ -19,5 +19,6 @@ Template.login.events ({
 });
 
 function failedLogin(e) {
-	console.log(e);
+	if(e)
+		alert("Login Failed " + e);
 }

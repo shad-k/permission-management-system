@@ -24,4 +24,9 @@ Template.messageBoard.events({
 
 		event.target.message.value = "";
 	},
+	'click .deleteMessage' (event) {
+		event.preventDefault();
+
+		Meteor.call('messages.remove', this._id);
+	}
 });

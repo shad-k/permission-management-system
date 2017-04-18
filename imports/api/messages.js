@@ -22,5 +22,14 @@ Meteor.methods({
 	    	owner: Meteor.userId(),
 	    	username: Meteor.user().username,
 	    });
+	},
+	'messages.remove' (id) {
+		check(id, String);
+		// console.log(Meteor.userId());
+		// Roles.addUsersToRoles([Meteor.userId()],'admin', Roles.GLOBAL_GROUP);
+		// console.log(Roles.userIsInRole(Meteor.userId(), 'admin', Roles.GLOBAL_GROUP));
+		if(Roles.userIsInRole(Meteor.userId(), 'admin', Roles.GLOBAL_GROUP)) {
+			Messages.remove(id);
+		}
 	}
 });

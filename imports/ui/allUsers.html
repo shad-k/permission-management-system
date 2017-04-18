@@ -1,0 +1,14 @@
+<template name="allUsers">
+	<div class="userList">
+		<h4>User List</h4>
+		<ul>
+			{{#each users}}
+				<li>
+					<div class="chip">
+						{{username}}
+					</div>
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+</template>

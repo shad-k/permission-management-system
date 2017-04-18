@@ -26,7 +26,10 @@
         </div>
 	    <div class="card-action">
 	    	{{ username }} {{ createdAt }}
-	    	 <!-- <a class="deleteMessage btn-floating btn-large waves-effect waves-light red"><i class="material-icons">close</i></a> -->
+			{{#if isInRole 'admin'}}
+	    		<a class="deleteMessage btn-floating btn-small waves-effect waves-light red"><i class="material-icons">close</i></a>
+	    	{{/if}}
+
 	    </div>
     </div>
 </template>

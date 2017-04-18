@@ -8,6 +8,14 @@
 
 		<div class="panels">
 			{{ > messageBoard }}
+
+			<div class="controlPanel">
+				{{#if isInRole 'admin' }}
+					{{ > adminPanel }}
+				{{ else if isInRole 'user' }}
+					{{ > userPanel }}
+				{{/if}}
+			</div>
 		</div>
 	</div>
 </template>
