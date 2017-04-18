@@ -1,0 +1,13 @@
+<template name="dashboard">
+	<div class="dashBoard">
+		<header class="dashboard-header">
+			<span class="username">{{ currentUser.username }}</span>
+
+			<a class="logout waves-effect waves-light btn">Logout</a>
+		</header>
+
+		<div class="panels">
+			{{ > messageBoard }}
+		</div>
+	</div>
+</template>

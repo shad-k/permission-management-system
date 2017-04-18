@@ -1,5 +1,9 @@
 import { Template } from 'meteor/templating';
 
+import { Meteor } from 'meteor/meteor';
+
+import { Accounts } from 'meteor/accounts-base';
+
 import './login.html';
 
 Template.login.events ({
@@ -10,6 +14,10 @@ Template.login.events ({
 
 		var password = event.target.password.value;
 
-		Meteor.loginWithPassword(username, password);
+		Meteor.loginWithPassword({"username": username}, password, failedLogin);
 	}
-})
+});
+
+function failedLogin(e) {
+	console.log(e);
+}

@@ -1,0 +1,32 @@
+<template name="messageBoard">
+	<div class="messages">
+		<div class="messageTextDiv">
+			<h4>Messages</h4>
+		</div>
+
+		<div class="messageArea">
+		      {{#each messages}}
+		        {{> message}}
+		      {{/each}}
+		</div>
+
+		<form class="inputArea">
+			<div class="input-field">
+				<input type="text" name="message" id="" placeholder="Enter message..." class="inputMessage" autofocus>
+			</div>
+		</form>
+	</div>
+</template>
+
+
+<template name="message">
+	<div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+        	{{ text }}
+        </div>
+	    <div class="card-action">
+	    	{{ username }} {{ createdAt }}
+	    	 <!-- <a class="deleteMessage btn-floating btn-large waves-effect waves-light red"><i class="material-icons">close</i></a> -->
+	    </div>
+    </div>
+</template>
