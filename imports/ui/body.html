@@ -1,0 +1,12 @@
+<body>
+	<div class="container">
+		{{ #if currentUser }}
+			<h1>User is logged in</h1>
+		{{ else }}
+			<h1 class="">Login</h1>
+			<div class="">
+				{{ > login }}
+			</div>
+		{{ /if }}
+	</div>
+</body>
