@@ -1,0 +1,19 @@
+* {
+	box-sizing: border-box;
+}
+
+
+html {
+	/*The html covers the whole width and height of the viewport*/
+	height: 100vh;
+	width: 100vw;
+}
+
+
+body {
+	/*The html covers the whole width and height of the document*/
+	height: 100%;
+	width: 100%;
+	background-color: #00aaff;
+	margin: 0;
+}
