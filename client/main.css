@@ -1,3 +1,4 @@
+/*Set box-sizing to border-box*/
 * {
 	box-sizing: border-box;
 }
@@ -19,7 +20,7 @@ body {
 	border-top: 1px solid #00aaff;
 }
 
-
+/*Setting input field label*/
 .input-field label {
 	color: #FFF;
 }
@@ -29,7 +30,7 @@ h1 {
 	margin: 0;
 }
 
-
+/*This div contains all the templates*/
 .container-fluid {
 	height: 100%;
 	width: 100%;
@@ -39,7 +40,7 @@ h1 {
 	align-items: center;
 }
 
-
+/*The login landing div*/
 .loginDiv {
 	background-color: rgba(200,250,200,0.6);
 	padding: 10px 50px;
@@ -53,13 +54,13 @@ h1 {
 	color: #FFF;
 }
 
-
+/*The common dashboard template*/
 .dashBoard {
 	height: 100%;
 	width: 100%;
 }
 
-
+/*This div contains the custom panel depending on the logged in user*/
 .panels {
 	height: 90%;
 	width: 100%;
@@ -68,7 +69,7 @@ h1 {
 	justify-content: space-between;
 }
 
-
+/*Common dashboard header*/
 .dashboard-header {
 	background-color: #00a0a0;
 	padding: 10px;
@@ -87,7 +88,7 @@ h1 {
 	float: right;
 }
 
-
+/*The message board div*/
 .messages {
 	background-color: #FFF;
 	height: 100%;
@@ -126,7 +127,7 @@ h1 {
 	padding: 5px !important;
 }
 
-
+/*Custom admin panel*/
 .adminDashboard {
 	height: 100%;
 	width: 100%;

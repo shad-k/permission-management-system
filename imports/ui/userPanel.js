@@ -1,3 +1,4 @@
+// This code handles the user panel logic. Provides event handlers to change the profile information
 import './userPanel.html';
 
 import { Template } from 'meteor/templating';

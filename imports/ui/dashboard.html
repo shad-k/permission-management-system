@@ -1,3 +1,4 @@
+<!-- The main dashboard template -->
 <template name="dashboard">
 	<div class="dashBoard">
 		<header class="dashboard-header">
@@ -10,6 +11,7 @@
 			{{ > messageBoard }}
 
 			<div class="controlPanel">
+				<!-- Depending on the logged in user this would display different templates -->
 				{{#if isInRole 'admin' }}
 					{{ > adminPanel }}
 				{{ else if isInRole 'user' }}

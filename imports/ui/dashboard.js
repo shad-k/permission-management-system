@@ -1,3 +1,5 @@
+// This file contains code that constructs the common dashboard and integrates
+// user dependent templates
 import { Template } from 'meteor/templating';
 
 import { Meteor } from 'meteor/meteor';

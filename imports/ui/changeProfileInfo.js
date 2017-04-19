@@ -1,3 +1,4 @@
+
 import './changeProfileInfo.html';
 
 import { Meteor } from 'meteor/meteor';

@@ -1,3 +1,4 @@
+// This file contains the login page code. This mainly logs the user in
 import { Template } from 'meteor/templating';
 
 import { Meteor } from 'meteor/meteor';

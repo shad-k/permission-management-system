@@ -598,11 +598,11 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=a3064cc924e51ff9ecede04d26f1c5381a1773d4",
+      "url": "/app/app.js?hash=768d9eaa22dfd8293ac86d106efb5a5ef6e7a159",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/a3064cc924e51ff9ecede04d26f1c5381a1773d4.map",
-      "size": 94244,
-      "hash": "a3064cc924e51ff9ecede04d26f1c5381a1773d4"
+      "sourceMapUrl": "/app/768d9eaa22dfd8293ac86d106efb5a5ef6e7a159.map",
+      "size": 101648,
+      "hash": "768d9eaa22dfd8293ac86d106efb5a5ef6e7a159"
     },
     {
       "path": "packages/service-configuration.js",
@@ -618,11 +618,11 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/merged-stylesheets.css?hash=e0271e6467868cebb87e09068ac792553e966fbf",
+      "url": "/merged-stylesheets.css?hash=50939d4ee9a0e803baf758ad95b716422700644a",
       "sourceMap": "merged-stylesheets.css.map",
-      "sourceMapUrl": "/e0271e6467868cebb87e09068ac792553e966fbf.map",
-      "size": 159730,
-      "hash": "e0271e6467868cebb87e09068ac792553e966fbf"
+      "sourceMapUrl": "/50939d4ee9a0e803baf758ad95b716422700644a.map",
+      "size": 160050,
+      "hash": "50939d4ee9a0e803baf758ad95b716422700644a"
     },
     {
       "path": "packages/materialize_materialize/fonts/roboto/Roboto-Bold.woff",

@@ -1,3 +1,5 @@
+// This file contains code that handles the message board template.
+// This registers and fires events that occur on the message board
 import { Meteor } from 'meteor/meteor';
 
 import { Template } from 'meteor/templating';

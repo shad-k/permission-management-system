@@ -1,3 +1,4 @@
+<!-- This template file prints the user list and provides call-to-action buttons for various operations -->
 <template name="allUsers">
 	<div class="userList">
 		<h4>User List</h4>
@@ -6,6 +7,7 @@
 				<li>
 					<div class="chip">
 						{{username}}
+						<!-- Display the below only to admin and manager -->
 						{{#if isInRole 'admin, manager'}}
 							<button class="blockUser">Block User</button>
 
@@ -14,6 +16,7 @@
 							<button class="changeProfileInfo">Change Profile Info</button>
 						{{/if}}
 
+						<!-- Display the below only to admin -->
 						{{#if isInRole 'admin'}}
 							<button class="removeUser">Remove User</button>
 						{{/if}}

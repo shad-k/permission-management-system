@@ -1,3 +1,4 @@
+// This file contains code that imports all the important templates into the body
 import { Template } from 'meteor/templating';
 
 import { Messages } from '../api/messages.js';

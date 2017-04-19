@@ -29,32 +29,32 @@ module.importSync("meteor/check", {                                             
 		check = v;                                                                         // 1
 	}                                                                                   // 1
 }, 2);                                                                               // 1
-var Messages = new Mongo.Collection('messages');                                     // 7
-Meteor.methods({                                                                     // 10
-	'messages.insert': function (text) {                                                // 11
+var Messages = new Mongo.Collection('messages');                                     // 9
+Meteor.methods({                                                                     // 12
+	'messages.insert': function (text) {                                                // 13
+		// This method is used to insert new messages into the collection                  // 14
 		check(text, String); // Make sure the user is logged in before inserting a message
                                                                                      //
-		if (!Meteor.userId()) {                                                            // 15
-			throw new Meteor.Error('not-authorized');                                         // 16
-		}                                                                                  // 17
+		if (!Meteor.userId()) {                                                            // 18
+			throw new Meteor.Error('not-authorized');                                         // 19
+		}                                                                                  // 20
                                                                                      //
-		Messages.insert({                                                                  // 19
-			text: text,                                                                       // 20
-			createdAt: new Date(),                                                            // 21
-			owner: Meteor.userId(),                                                           // 22
-			username: Meteor.user().username                                                  // 23
-		});                                                                                // 19
-	},                                                                                  // 25
-	'messages.remove': function (id) {                                                  // 26
-		check(id, String); // console.log(Meteor.userId());                                // 27
-		// Roles.addUsersToRoles([Meteor.userId()],'admin', Roles.GLOBAL_GROUP);           // 29
-		// console.log(Roles.userIsInRole(Meteor.userId(), 'admin', Roles.GLOBAL_GROUP));  // 30
+		Messages.insert({                                                                  // 22
+			text: text,                                                                       // 23
+			createdAt: new Date(),                                                            // 24
+			owner: Meteor.userId(),                                                           // 25
+			username: Meteor.user().username                                                  // 26
+		});                                                                                // 22
+	},                                                                                  // 28
+	'messages.remove': function (id) {                                                  // 29
+		// This method removes a message that the admin wishes to delete                   // 30
+		check(id, String);                                                                 // 31
                                                                                      //
-		if (Roles.userIsInRole(Meteor.userId(), 'admin', Roles.GLOBAL_GROUP)) {            // 31
-			Messages.remove(id);                                                              // 32
-		}                                                                                  // 33
-	}                                                                                   // 34
-});                                                                                  // 10
+		if (Roles.userIsInRole(Meteor.userId(), 'admin', Roles.GLOBAL_GROUP)) {            // 32
+			Messages.remove(id);                                                              // 33
+		}                                                                                  // 34
+	}                                                                                   // 35
+});                                                                                  // 12
 ///////////////////////////////////////////////////////////////////////////////////////
 
 }],"users.js":["meteor/accounts-base","meteor/alanning:roles","meteor/meteor",function(require,exports,module){
@@ -83,59 +83,68 @@ module.importSync("meteor/meteor", {                                            
 		Meteor = v;                                                                        // 1
 	}                                                                                   // 1
 }, 2);                                                                               // 1
-Meteor.methods({                                                                     // 7
-	'accounts.addUser': function (username, password) {                                 // 8
-		var id = Accounts.createUser({                                                     // 9
-			username: username,                                                               // 9
-			password: password                                                                // 9
-		});                                                                                // 9
-		Meteor.users.update({                                                              // 10
-			_id: id                                                                           // 10
-		}, {                                                                               // 10
-			$set: {                                                                           // 10
-				profile: {                                                                       // 10
-					name: "",                                                                       // 10
-					email: "",                                                                      // 10
-					phone: ""                                                                       // 10
-				}                                                                                // 10
-			}                                                                                 // 10
-		});                                                                                // 10
-		return id;                                                                         // 11
-	},                                                                                  // 12
-	'roles.setRole': function (id, permission) {                                        // 13
-		console.log(id);                                                                   // 14
-		Roles.addUsersToRoles([id], permission, Roles.GLOBAL_GROUP);                       // 15
-	},                                                                                  // 16
-	'roles.blockUser': function (id) {                                                  // 17
-		Roles.addUsersToRoles([id], 'block', 'postMessage');                               // 18
-	},                                                                                  // 19
-	'roles.unblockUser': function (id) {                                                // 20
-		Roles.removeUsersFromRoles([id], 'block', 'postMessage');                          // 21
-	},                                                                                  // 22
-	'user.removeUser': function (id) {                                                  // 23
-		Meteor.users.remove({                                                              // 24
-			_id: id                                                                           // 24
-		});                                                                                // 24
-	},                                                                                  // 25
-	'user.updateUser': function (username, name, email, phone) {                        // 26
-		if (username === "root") {                                                         // 27
-			return "Admin details can't be changed.";                                         // 28
-		}                                                                                  // 29
+Meteor.methods({                                                                     // 9
+	'accounts.addUser': function (username, password) {                                 // 10
+		// This method allows the admin to create new users                                // 11
+		var id = Accounts.createUser({                                                     // 12
+			username: username,                                                               // 12
+			password: password                                                                // 12
+		}); // It also populates the profile object for the newly created users            // 12
                                                                                      //
-		Meteor.users.update({                                                              // 30
-			"username": username                                                              // 30
-		}, {                                                                               // 30
-			$set: {                                                                           // 30
-				"profile": {                                                                     // 30
-					"name": name,                                                                   // 30
-					"email": email,                                                                 // 30
-					"phone": phone                                                                  // 30
-				}                                                                                // 30
-			}                                                                                 // 30
-		});                                                                                // 30
-		return true;                                                                       // 31
-	}                                                                                   // 32
-});                                                                                  // 7
+		Meteor.users.update({                                                              // 15
+			_id: id                                                                           // 15
+		}, {                                                                               // 15
+			$set: {                                                                           // 15
+				profile: {                                                                       // 15
+					name: "",                                                                       // 15
+					email: "",                                                                      // 15
+					phone: ""                                                                       // 15
+				}                                                                                // 15
+			}                                                                                 // 15
+		}); // and returns the id of the newly created user                                // 15
+                                                                                     //
+		return id;                                                                         // 18
+	},                                                                                  // 19
+	'roles.setRole': function (id, permission) {                                        // 20
+		// Sets the roles for the newly created users                                      // 21
+		Roles.addUsersToRoles([id], permission, Roles.GLOBAL_GROUP);                       // 22
+	},                                                                                  // 23
+	'roles.blockUser': function (id) {                                                  // 24
+		// Allows the manager and admin to block a user from posting a message             // 25
+		Roles.addUsersToRoles([id], 'block', 'postMessage');                               // 26
+	},                                                                                  // 27
+	'roles.unblockUser': function (id) {                                                // 28
+		// Allows the manager and admin to unblock a user                                  // 29
+		Roles.removeUsersFromRoles([id], 'block', 'postMessage');                          // 30
+	},                                                                                  // 31
+	'user.removeUser': function (id) {                                                  // 32
+		// This method removes the user whose userId has been passed as argument           // 33
+		Meteor.users.remove({                                                              // 34
+			_id: id                                                                           // 34
+		});                                                                                // 34
+	},                                                                                  // 35
+	'user.updateUser': function (username, name, email, phone) {                        // 36
+		// This method updates the profile object of a user.                               // 37
+		// This operation can be called by only the admin and managers                     // 38
+		if (username === "root") {                                                         // 39
+			// Check if the user is root. If yes then don't update profile                    // 40
+			return "Admin details can't be changed.";                                         // 41
+		}                                                                                  // 42
+                                                                                     //
+		Meteor.users.update({                                                              // 43
+			"username": username                                                              // 43
+		}, {                                                                               // 43
+			$set: {                                                                           // 43
+				"profile": {                                                                     // 43
+					"name": name,                                                                   // 43
+					"email": email,                                                                 // 43
+					"phone": phone                                                                  // 43
+				}                                                                                // 43
+			}                                                                                 // 43
+		});                                                                                // 43
+		return true;                                                                       // 44
+	}                                                                                   // 45
+});                                                                                  // 9
 ///////////////////////////////////////////////////////////////////////////////////////
 
 }]},"startup":{"roles.js":["meteor/alanning:roles","meteor/meteor",function(require,exports,module){

@@ -1,0 +1,1 @@
+{"head":"","body":"","js":"\nTemplate.__checkName(\"managerPanel\");\nTemplate[\"managerPanel\"] = new Template(\"Template.managerPanel\", (function() {\n  var view = this;\n  return Spacebars.include(view.lookupTemplate(\"allUsers\"));\n}));\n","bodyAttrs":{}}

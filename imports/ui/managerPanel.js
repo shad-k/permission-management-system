@@ -1,3 +1,4 @@
+// The logic behind the manager panel
 import './managerPanel.html';
 
 import './allUsers.js';

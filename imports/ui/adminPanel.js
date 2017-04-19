@@ -1,3 +1,6 @@
+// This file contains the logic code for the admin panel
+
+
 import './adminPanel.html';
 
 import './allUsers.js';
@@ -6,11 +9,6 @@ import { Meteor } from 'meteor/meteor';
 
 import { Template } from 'meteor/templating';
 
-// Template.adminPanel.helpers({
-//   users() {
-//     return Meteor.users.find({});
-//   },
-// });
 
 Template.adminPanel.events({
 	'submit .createUser' (event) {
