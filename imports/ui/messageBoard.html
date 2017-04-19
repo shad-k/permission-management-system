@@ -12,7 +12,7 @@
 
 		<form class="inputArea">
 			<div class="input-field">
-				<input type="text" name="message" id="" placeholder="Enter message..." class="inputMessage" autofocus>
+				<input type="text" disabled="{{ isInRole 'block' 'postMessage' }}" name="message" id="" placeholder="Enter message..." class="inputMessage" autofocus>
 			</div>
 		</form>
 	</div>
@@ -25,7 +25,7 @@
         	{{ text }}
         </div>
 	    <div class="card-action">
-	    	{{ username }} {{ createdAt }}
+	    	{{ username }} - {{ createdAt }}
 			{{#if isInRole 'admin'}}
 	    		<a class="deleteMessage btn-floating btn-small waves-effect waves-light red"><i class="material-icons">close</i></a>
 	    	{{/if}}

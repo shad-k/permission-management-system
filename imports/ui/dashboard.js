@@ -12,6 +12,8 @@ import './adminPanel.js';
 
 import './userPanel.js';
 
+import './managerPanel.js';
+
 Template.dashboard.events ({
 	'click .logout'(event) {
 		Meteor.logout();

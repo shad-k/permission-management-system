@@ -6,9 +6,29 @@
 				<li>
 					<div class="chip">
 						{{username}}
+						{{#if isInRole 'admin, manager'}}
+							<button class="blockUser">Block User</button>
+
+							<button class="unblockUser">Unblock User</button>
+
+							<button class="changeProfileInfo">Change Profile Info</button>
+						{{/if}}
+
+						{{#if isInRole 'admin'}}
+							<button class="removeUser">Remove User</button>
+						{{/if}}
 					</div>
 				</li>
 			{{/each}}
 		</ul>
+
+		<div class="changeProfileDiv">
+			<input type="text" name="username" disabled="" class="un">
+			<input type="text" name="name" class="name">
+			<input type="text" name="email" class="email">
+			<input type="text" name="phone" class="phone">
+
+			<button class="updateUser">Update User Details</button>
+		</div>
 	</div>
 </template>
