@@ -159,8 +159,36 @@ h1 {
 	padding: 10px;
 }
 
+.chip {
+	display: flex;
+	justify-content: space-around;
+}
+
 
 .chip:hover {
 	background-color: #000;
 	color: #FFF;
+}
+
+
+.profilePage {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	/*left: 100%;*/
+	top: 0;
+}
+
+
+.changeProfileDiv {
+	display: none;
+	height: 100%;
+	width: 100%;
+}
+
+
+.ownProfileInfo {
+	background-color: #EEE;
+	padding: 10px;
+	display: none;
 }
