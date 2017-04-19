@@ -1,0 +1,1 @@
+{"head":"","body":"","js":"\nTemplate.body.addContent((function() {\n  var view = this;\n  return HTML.DIV({\n    class: \"container\"\n  }, HTML.Raw(\"\\n\\t\\t<h1>Login template</h1>\\n\\t\\t\"), Spacebars.include(view.lookupTemplate(\"login\")), \"\\n\\t\");\n}));\nMeteor.startup(Template.body.renderToDocument);\n","bodyAttrs":{}}

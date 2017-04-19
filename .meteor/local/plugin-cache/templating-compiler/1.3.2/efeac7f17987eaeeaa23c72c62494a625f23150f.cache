@@ -1,0 +1,1 @@
+{"head":"","body":"","js":"\nTemplate.__checkName(\"adminPanel\");\nTemplate[\"adminPanel\"] = new Template(\"Template.adminPanel\", (function() {\n  var view = this;\n  return \"Create A New User\";\n}));\n","bodyAttrs":{}}
