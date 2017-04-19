@@ -1,3 +1,13 @@
 <template name="userPanel">
-	<h1>User Panel</h1>
+	{{ > allUsers}}
+	<hr>
+	<button class="showProfile">Show Profile</button>
+	<div class="ownProfileInfo">
+		<input type="text" name="username" class="ownUsername" disabled="">
+		<input type="text" name="name" class="ownName">
+		<input type="text" name="email" class="ownEmail">
+		<input type="text" name="phone" class="ownPhone">
+
+		<button class="changeInfo">Update Info</button>
+	</div>
 </template>
